@@ -15,7 +15,7 @@ for a in num:
 print(f'- {num} -> {sum}')
 
 # Второй способ
-num = float(input('Введите число n: '))
+num = input('Введите число n: ')
 m = len(str(num))
 n = num * 10 ** (m-2)
 print(n)
@@ -29,3 +29,22 @@ def SumDigits (n):
     return sum
 
 print(f'{num} -> {SumDigits(n)}')
+
+exit()
+# Способ 3
+num = input('Введите число n: ')
+sum_digits = 0
+
+power = len(num) - 2
+num = float(num)
+num *= int(10 ** power)
+
+while num:
+    sum_digits += int(num % 10)
+    num //= 10
+
+print(int(sum_digits))
+
+# способ 4
+
+print(sum(map(int, list(input("Введите дробное число: ").replace(".", "")))))
